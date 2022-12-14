@@ -21,7 +21,8 @@ class OnReady : ListenerAdapter() {
                    OptionData(
                        OptionType.STRING, "city", "The city to get the weather of"
                    ).setRequired(true)),
-            Commands.slash("randomcat", "Get a random cat picture")
+            Commands.slash("randomcat", "Get a random cat picture"),
+            Commands.slash("set-ticket", "Set a ticket support")
         ).queue()
     }
 }

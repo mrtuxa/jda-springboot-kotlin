@@ -9,8 +9,7 @@ import net.dv8tion.jda.api.requests.GatewayIntent
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import space.mrtuxa.discord_bot.Main.jda
-import space.mrtuxa.discord_bot.events.GuildUserJoin
-import space.mrtuxa.discord_bot.events.OnReady
+import space.mrtuxa.discord_bot.events.*
 import space.mrtuxa.discord_bot.util.Helper
 import space.mrtuxa.discord_bot.verify.AddRole
 import verify.VerifyMessage
@@ -30,6 +29,11 @@ fun main(args: Array<String>) {
         .addEventListeners(OnReady())
         .addEventListeners(AddRole())
         .addEventListeners(VerifyMessage())
+        /**
+        .addEventListeners(TicketCommand())
+        .addEventListeners(TicketClickEvent())
+         */
+        .addEventListeners(Weather())
         .enableIntents(GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS))
         .build()
 
